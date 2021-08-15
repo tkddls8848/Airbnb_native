@@ -1,11 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
+import { useSelector , useDispatch} from "react-redux";
+import {logIn, logOut} from "../redux/usersSlice"
 
 export default () => {
-  const isLoggedIn = false;
+  const userslice = useSelector(state => state.usersReducer);
+  const dispatch = useDispatch();
   return (
     <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-      {isLoggedIn ? <Text>Welcome</Text> : <Text>Login please</Text>}
+      {userslice.isLoggedIn ? 
+        <TouchableOpacity onPress={() =>dispatch(logOut())}>
+          <Text>Log Out</Text>
+        </TouchableOpacity> : 
+        <TouchableOpacity onPress={() => dispatch(logIn("bs.token"))}>
+          <Text>Log In</Text>
+        </TouchableOpacity>
+      }
     </View>
   );
 };

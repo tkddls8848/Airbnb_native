@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "expo": "^39.0.5",
     "expo-font": "~8.3.0",
     "react": "~16.9.0",
