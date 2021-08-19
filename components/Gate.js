@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useSelector , useDispatch} from "react-redux";
-import {logIn, logOut} from "../redux/usersSlice"
+import {logIn, logOut} from "../redux/userSlice";
 
 export default () => {
   const userslice = useSelector(state => state.usersReducer);
